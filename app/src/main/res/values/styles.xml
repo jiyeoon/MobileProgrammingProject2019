@@ -23,6 +23,7 @@
         <item name="android:layout_alignParentTop">true</item>
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:adjustViewBounds">true</item>
+        <item name="android:src">@drawable/authentication</item>
     </style>
 
     <style name="CustomStatusTextView">
