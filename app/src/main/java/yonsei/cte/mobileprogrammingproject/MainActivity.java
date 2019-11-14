@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,6 +56,15 @@ public class MainActivity extends AppCompatActivity {
         //start Initialize_auth
         //Initialize firebase auth
         mAuth = FirebaseAuth.getInstance();
+
+        Button btn_go_home = (Button) findViewById(R.id.btn_Gohome);
+        btn_go_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
