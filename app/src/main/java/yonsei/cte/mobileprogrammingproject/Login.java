@@ -1,9 +1,11 @@
 package yonsei.cte.mobileprogrammingproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -132,6 +134,41 @@ public class Login extends AppCompatActivity {
         }
 
         return valid;
+    }
+
+    public void onSignInClicked(View view) {
+        mEmailField = (EditText)findViewById(R.id.edit_email);
+        mPasswordField = (EditText)findViewById(R.id.edit_password);
+
+        String email = mEmailField.getText().toString();
+        String password = mPasswordField.getText().toString();
+
+        signIn(email, password);
+    }
+
+    public void onCreateAccountClicked(View view) {
+        Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
+        startActivity(intent);
+
+    }
+
+    private void updateUI(FirebaseUser user){
+        if(user != null){
+            mStatusTextView.setText(getString(R.string.emailpassword_status_fmt, user.getEmail(), user.isEmailVerified()));
+            mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+
+            findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
+            findViewById(R.id.email_password_fields).setVisibility(View.GONE);
+            findViewById(R.id.email_sign_in_button).setVisibility(View.VISIBLE);
+        }
+        else{
+            mStatusTextView.setText(R.string.sign_out);
+            mDetailTextView.setText(null);
+
+            findViewById(R.id.email_password_buttons).setVisibility(View.VISIBLE);
+            findViewById(R.id.email_password_fields).setVisibility(View.VISIBLE);
+            findViewById(R.id.email_sign_in_button).setVisibility(View.GONE);
+        }
     }
 
 }
