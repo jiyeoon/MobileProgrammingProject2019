@@ -91,6 +91,7 @@ public class Login extends AppCompatActivity {
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             //updateUI(user);
+                            System.out.println("Sign In : Success");
                         } else{
                             // sign in failed.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
