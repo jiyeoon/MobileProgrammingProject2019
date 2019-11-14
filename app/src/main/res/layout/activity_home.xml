@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/btn_start_vcr"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="벨크로"
+        android:layout_margin="7dp"/>
+    <Button
+        android:id="@+id/btn_start_ddbtn"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="똑딱이 단추"
+        android:layout_margin="7dp"/>
+    <Button
+        android:id="@+id/btn_start_zipper"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="지퍼"
+        android:layout_margin="7dp"/>
+    <Button
+        android:id="@+id/btn_start_stud"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="단추"
+        android:layout_margin="7dp"/>
+    <Button
+        android:id="@+id/btn_start_btn"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="작은 단추"
+        android:layout_margin="7dp"/>
+</LinearLayout>
