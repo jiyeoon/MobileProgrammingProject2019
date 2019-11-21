@@ -30,39 +30,56 @@ public class HomeActivity extends AppCompatActivity {
 
     public void Setclicklistener(){
 
+        /*
+        1 = velcro
+        2 = Ddtn
+        3 = zipper
+        4 = stud
+        5 = button
+         */
         velcro_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, VelcroActivity.class);
+                Intent intent = new Intent(HomeActivity.this, CloseoropenActivity.class);
+                intent.putExtra("ClothType", 1);
                 startActivity(intent);
+                finish();
             }
         });
         dd_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, DdbtnActivity.class);
+                Intent intent = new Intent(HomeActivity.this, CloseoropenActivity.class);
+                intent.putExtra("ClothType", 2);
                 startActivity(intent);
+                finish();
             }
         });
         zipper_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, ZipperActivity.class);
+                Intent intent = new Intent(HomeActivity.this, CloseoropenActivity.class);
+                intent.putExtra("ClothType", 3);
                 startActivity(intent);
+                finish();
             }
         });
         stud_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, StudActivity.class);
+                Intent intent = new Intent(HomeActivity.this, CloseoropenActivity.class);
+                intent.putExtra("ClothType", 4);
                 startActivity(intent);
+                finish();
             }
         });
         btn_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, BtnActivity.class);
+                Intent intent = new Intent(HomeActivity.this, CloseoropenActivity.class);
+                intent.putExtra("ClothType", 5);
                 startActivity(intent);
+                finish();
             }
         });
     }

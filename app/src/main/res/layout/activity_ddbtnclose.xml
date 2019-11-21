@@ -5,48 +5,48 @@
 
     <data>
         <variable
-            name="btnactivity"
-            type="yonsei.cte.mobileprogrammingproject.BtnActivity" />
+            name="ddbtncloseactivity"
+            type="yonsei.cte.mobileprogrammingproject.DdbtncloseActivity" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".BtnActivity">
+        tools:context=".DdbtncloseActivity">
 
         <ImageView
-            android:id="@+id/btn1_image"
+            android:id="@+id/ddbtnclose1_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/one"
             android:visibility="visible"/>
         <ImageView
-            android:id="@+id/btn2_image"
+            android:id="@+id/ddbtnclose2_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/two"
             android:visibility="gone"/>
         <ImageView
-            android:id="@+id/btn3_image"
+            android:id="@+id/ddbtnclose3_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/three"
             android:visibility="gone"/>
         <ImageView
-            android:id="@+id/btn4_image"
+            android:id="@+id/ddbtnclose4_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/four"
             android:visibility="gone"/>
         <ImageView
-            android:id="@+id/btn5_image"
+            android:id="@+id/ddbtnclose5_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/five"
             android:visibility="gone"/>
 
         <TextView
-            android:id="@+id/btn1_text"
+            android:id="@+id/ddbtnclose1_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -55,7 +55,7 @@
             android:layout_marginBottom="10dp"
             android:visibility="visible"/>
         <TextView
-            android:id="@+id/btn2_text"
+            android:id="@+id/ddbtnclose2_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -64,7 +64,7 @@
             android:layout_marginBottom="10dp"
             android:visibility="gone"/>
         <TextView
-            android:id="@+id/btn3_text"
+            android:id="@+id/ddbtnclose3_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -73,7 +73,7 @@
             android:layout_marginBottom="10dp"
             android:visibility="gone"/>
         <TextView
-            android:id="@+id/btn4_text"
+            android:id="@+id/ddbtnclose4_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -82,7 +82,7 @@
             android:layout_marginBottom="10dp"
             android:visibility="gone"/>
         <TextView
-            android:id="@+id/btn5_text"
+            android:id="@+id/ddbtnclose5_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -97,20 +97,20 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/btngoprev_button"
+                android:id="@+id/ddbtnclosegoprev_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이전"
                 android:visibility="invisible"/>
 
             <Button
-                android:id="@+id/btngohome_button"
+                android:id="@+id/ddbtnclosegohome_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="홈으로" />
 
             <Button
-                android:id="@+id/btngonext_button"
+                android:id="@+id/ddbtnclosegonext_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="다음"
