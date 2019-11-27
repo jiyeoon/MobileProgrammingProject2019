@@ -14,7 +14,7 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="똑딱이 단추"
+        android:text="똑딱이"
         android:layout_margin="7dp"/>
     <Button
         android:id="@+id/btn_start_zipper"
@@ -28,13 +28,13 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="단추"
+        android:text="고리에 끼우는 단추"
         android:layout_margin="7dp"/>
     <Button
         android:id="@+id/btn_start_btn"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="작은 단추"
+        android:text="일반 단추(작은 단추)"
         android:layout_margin="7dp"/>
 </LinearLayout>
