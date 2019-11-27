@@ -66,12 +66,12 @@ public class Login extends AppCompatActivity {
                             //Sign in success!!!!!
                             Log.d(TAG, "createUserwithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            //UpdateUI(user);
+                            //updateUI(user);
                         } else{
                             //sign in failed.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(getApplicationContext(), "Authentication failed", Toast.LENGTH_SHORT).show();
-                            //UpdateUI(null);
+                            //updateUI(null);
                         }
                     }
                 });
@@ -94,6 +94,15 @@ public class Login extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             //updateUI(user);
                             System.out.println("Sign In : Success");
+                            Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
+
+                            //로그인 성공하면 다시 화면 돌아감~~!!
+                            Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                            intent.putExtra("user" ,user);
+
+                            startActivity(intent);
+                            finish();
+
                         } else{
                             // sign in failed.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -103,7 +112,7 @@ public class Login extends AppCompatActivity {
 
                         //start exclude
                         if(!task.isSuccessful()){
-                            //mStatusTextView.setText(R.string.auth_failed);
+                            mStatusTextView.setText(R.string.auth_failed);
                         }
                     }
                 });
@@ -149,9 +158,9 @@ public class Login extends AppCompatActivity {
     public void onCreateAccountClicked(View view) {
         Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
         startActivity(intent);
-
     }
 
+    /*
     private void updateUI(FirebaseUser user){
         if(user != null){
             mStatusTextView.setText(getString(R.string.emailpassword_status_fmt, user.getEmail(), user.isEmailVerified()));
@@ -170,5 +179,6 @@ public class Login extends AppCompatActivity {
             findViewById(R.id.email_sign_in_button).setVisibility(View.GONE);
         }
     }
+    */
 
 }

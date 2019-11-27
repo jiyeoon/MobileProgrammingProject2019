@@ -1,5 +1,6 @@
 package yonsei.cte.mobileprogrammingproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -17,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
 
 public class CreateAccount extends AppCompatActivity {
     private static final String TAG = "EmailPassword";
@@ -42,32 +44,28 @@ public class CreateAccount extends AppCompatActivity {
 
         //Check if user is signed in
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
+        updateUI(currentUser);
     }
 
+
     private void createAccount(String email, String password){
-        //Log.d(TAG, "createAccount : " + email);
+        Log.d(TAG, "createAccount : " + email);
         if(!validatedForm()){
             return;
         }
 
         //showProgressDialog();
-
-        //[start create user with eamil]
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(CreateAccount.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            //Sign in success!!!!!
-                            Log.d(TAG, "createUserwithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            //UpdateUI(user);
+                        Log.d(TAG, "New User Registration : " + task.isSuccessful());
+
+                        if(!task.isSuccessful()){
+                            Toast.makeText(getApplicationContext(), "Authentication is failed.", Toast.LENGTH_SHORT).show();
                         } else{
-                            //sign in failed.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(getApplicationContext(), "Authentication failed", Toast.LENGTH_SHORT).show();
-                            //UpdateUI(null);
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            updateUI(user);
                         }
                     }
                 });
@@ -97,13 +95,34 @@ public class CreateAccount extends AppCompatActivity {
         return valid;
     }
 
+
     public void onCreateButtonClicked(View view) {
-        mEmailField.findViewById(R.id.create_email);
-        mPasswordField.findViewById(R.id.create_password);
+        mEmailField = (EditText)findViewById(R.id.create_email);
+        mPasswordField = (EditText)findViewById(R.id.create_password);
 
         String email = mEmailField.getText().toString();
         String password = mPasswordField.getText().toString();
 
         createAccount(email, password);
     }
+
+    private void updateUI(FirebaseUser user){
+        if(user != null){
+            mStatusTextView.setText(getString(R.string.emailpassword_status_fmt, user.getEmail(), user.isEmailVerified()));
+            mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+
+            findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
+            findViewById(R.id.email_password_fields).setVisibility(View.GONE);
+            findViewById(R.id.email_sign_in_button).setVisibility(View.VISIBLE);
+        }
+        else{
+            mStatusTextView.setText(R.string.sign_out);
+            mDetailTextView.setText(null);
+
+            findViewById(R.id.email_password_buttons).setVisibility(View.VISIBLE);
+            findViewById(R.id.email_password_fields).setVisibility(View.VISIBLE);
+            findViewById(R.id.email_sign_in_button).setVisibility(View.GONE);
+        }
+    }
+
 }
