@@ -1,15 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="ddtnactivity"
+            type="yonsei.cte.mobileprogrammingproject.DdbtnActivity" />
+    </data>
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".DdbtnActivity">
 
-    <Button
-        android:id="@+id/btn_go_home2"
+    <ImageView
+        android:id="@+id/ddbtn1_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="홈으로"/>
+        android:src="@drawable/one"
+        android:visibility="visible"/>
+    <ImageView
+        android:id="@+id/ddbtn2_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/two"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/ddbtn3_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/three"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/ddbtn4_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/four"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/ddbtn5_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/five"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/ddbtn1_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="1번 설명"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"/>
+    <TextView
+        android:id="@+id/ddbtn2_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="2번 설명"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/ddbtn3_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="3번 설명"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/ddbtn4_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="4번 설명"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/ddbtn5_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="5번 설명"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/ddbtngoprev_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이전"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/ddbtngohome_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="홈으로" />
+
+        <Button
+            android:id="@+id/ddbtngonext_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="다음"
+            android:visibility="visible"/>
+    </LinearLayout>
 
 </LinearLayout>
+</layout>
