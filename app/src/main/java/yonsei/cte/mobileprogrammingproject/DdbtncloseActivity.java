@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 import yonsei.cte.mobileprogrammingproject.databinding.ActivityDdbtnBinding;
 import yonsei.cte.mobileprogrammingproject.databinding.ActivityDdbtncloseBinding;
 
@@ -45,49 +48,36 @@ public class DdbtncloseActivity extends AppCompatActivity {
                 setCondition(btn_condition);
             }
         });
+        Glide.with(this).load(R.drawable.ddbtnclose1).diskCacheStrategy(DiskCacheStrategy.RESOURCE).into(binding.ddbtnclose1Image);
+        Glide.with(this).load(R.drawable.ddbtnclose2).diskCacheStrategy(DiskCacheStrategy.RESOURCE).into(binding.ddbtnclose2Image);
+        Glide.with(this).load(R.drawable.ddbtnclose3).diskCacheStrategy(DiskCacheStrategy.RESOURCE).into(binding.ddbtnclose3Image);
     }
 
     private void setCondition(int btn_condition) {
         switch (btn_condition) {
             case 0:
-                binding.ddbtnclose1Text.setVisibility(binding.ddbtnclose1Text.getVisibility() == View.VISIBLE ? View.VISIBLE : View.VISIBLE);
-                binding.ddbtnclose2Text.setVisibility(binding.ddbtnclose2Text.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclose1Image.setVisibility(binding.ddbtnclose1Image.getVisibility() == View.VISIBLE ? View.VISIBLE : View.VISIBLE);
-                binding.ddbtnclose2Image.setVisibility(binding.ddbtnclose2Image.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclosegoprevButton.setVisibility(binding.ddbtnclosegoprevButton.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.INVISIBLE);
+                binding.ddbtnclose1Text.setVisibility(View.VISIBLE);
+                binding.ddbtnclose2Text.setVisibility(View.GONE);
+                binding.ddbtnclose1Image.setVisibility(View.VISIBLE);
+                binding.ddbtnclose2Image.setVisibility(View.GONE);
+                binding.ddbtnclosegoprevButton.setVisibility(View.INVISIBLE);
                 break;
             case 1:
-                binding.ddbtnclose1Text.setVisibility(binding.ddbtnclose1Text.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclose2Text.setVisibility(binding.ddbtnclose2Text.getVisibility() == View.VISIBLE ? View.VISIBLE : View.VISIBLE);
-                binding.ddbtnclose3Text.setVisibility(binding.ddbtnclose3Text.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclose1Image.setVisibility(binding.ddbtnclose1Image.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclose2Image.setVisibility(binding.ddbtnclose2Image.getVisibility() == View.VISIBLE ? View.VISIBLE : View.VISIBLE);
-                binding.ddbtnclose3Image.setVisibility(binding.ddbtnclose3Image.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclosegoprevButton.setVisibility(binding.ddbtnclosegoprevButton.getVisibility() == View.VISIBLE ? View.VISIBLE : View.VISIBLE);
+                binding.ddbtnclose1Text.setVisibility(View.GONE);
+                binding.ddbtnclose2Text.setVisibility(View.VISIBLE);
+                binding.ddbtnclose3Text.setVisibility(View.GONE);
+                binding.ddbtnclose1Image.setVisibility(View.GONE);
+                binding.ddbtnclose2Image.setVisibility(View.VISIBLE);
+                binding.ddbtnclose3Image.setVisibility(View.GONE);
+                binding.ddbtnclosegoprevButton.setVisibility(View.VISIBLE);
+                binding.ddbtnclosegonextButton.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                binding.ddbtnclose2Text.setVisibility(binding.ddbtnclose2Text.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclose3Text.setVisibility(binding.ddbtnclose3Text.getVisibility() == View.VISIBLE ? View.VISIBLE : View.VISIBLE);
-                binding.ddbtnclose4Text.setVisibility(binding.ddbtnclose4Text.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclose2Image.setVisibility(binding.ddbtnclose2Image.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclose3Image.setVisibility(binding.ddbtnclose3Image.getVisibility() == View.VISIBLE ? View.VISIBLE : View.VISIBLE);
-                binding.ddbtnclose4Image.setVisibility(binding.ddbtnclose4Image.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                break;
-            case 3:
-                binding.ddbtnclose3Text.setVisibility(binding.ddbtnclose3Text.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclose4Text.setVisibility(binding.ddbtnclose4Text.getVisibility() == View.VISIBLE ? View.VISIBLE : View.VISIBLE);
-                binding.ddbtnclose5Text.setVisibility(binding.ddbtnclose5Text.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclose3Image.setVisibility(binding.ddbtnclose3Image.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclose4Image.setVisibility(binding.ddbtnclose4Image.getVisibility() == View.VISIBLE ? View.VISIBLE : View.VISIBLE);
-                binding.ddbtnclose5Image.setVisibility(binding.ddbtnclose5Image.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclosegonextButton.setVisibility(binding.ddbtnclosegonextButton.getVisibility() == View.INVISIBLE ? View.VISIBLE : View.VISIBLE);
-                break;
-            case 4:
-                binding.ddbtnclose4Text.setVisibility(binding.ddbtnclose4Text.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclose5Text.setVisibility(binding.ddbtnclose5Text.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
-                binding.ddbtnclose4Image.setVisibility(binding.ddbtnclose4Image.getVisibility() == View.VISIBLE ? View.GONE : View.GONE);
-                binding.ddbtnclose5Image.setVisibility(binding.ddbtnclose5Image.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
-                binding.ddbtnclosegonextButton.setVisibility(binding.ddbtnclosegonextButton.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.INVISIBLE);
+                binding.ddbtnclose2Text.setVisibility(View.GONE);
+                binding.ddbtnclose3Text.setVisibility(View.VISIBLE);
+                binding.ddbtnclose2Image.setVisibility(View.GONE);
+                binding.ddbtnclose3Image.setVisibility(View.VISIBLE);
+                binding.ddbtnclosegonextButton.setVisibility(View.INVISIBLE);
                 break;
 
         }
