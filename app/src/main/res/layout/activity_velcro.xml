@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="btnactivity"
+            name="velcroactivity"
             type="yonsei.cte.mobileprogrammingproject.VelcroActivity" />
     </data>
     <LinearLayout

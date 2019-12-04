@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="ddbtncloseactivity"
+            name="studcloseactivity"
             type="yonsei.cte.mobileprogrammingproject.StudcloseActivity" />
     </data>
     <LinearLayout
