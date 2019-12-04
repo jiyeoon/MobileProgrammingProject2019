@@ -14,35 +14,35 @@
         android:orientation="vertical"
         tools:context=".DdbtncloseActivity">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="똑딱이 풀기"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#ffffff"/>
+
         <ImageView
             android:id="@+id/ddbtnclose1_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/one"
+            android:layout_weight="1"
+            android:layout_gravity="center"
             android:visibility="visible"/>
         <ImageView
             android:id="@+id/ddbtnclose2_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/two"
+            android:layout_weight="1"
+            android:layout_gravity="center"
             android:visibility="gone"/>
         <ImageView
             android:id="@+id/ddbtnclose3_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/three"
-            android:visibility="gone"/>
-        <ImageView
-            android:id="@+id/ddbtnclose4_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/four"
-            android:visibility="gone"/>
-        <ImageView
-            android:id="@+id/ddbtnclose5_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/five"
+            android:layout_weight="1"
+            android:layout_gravity="center"
             android:visibility="gone"/>
 
         <TextView
@@ -69,24 +69,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="3번 설명"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
-            android:visibility="gone"/>
-        <TextView
-            android:id="@+id/ddbtnclose4_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="4번 설명"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
-            android:visibility="gone"/>
-        <TextView
-            android:id="@+id/ddbtnclose5_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="5번 설명"
             android:textSize="20sp"
             android:layout_marginBottom="10dp"
             android:visibility="gone"/>
