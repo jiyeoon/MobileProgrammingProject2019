@@ -76,6 +76,7 @@ public class ZippercloseActivity extends AppCompatActivity {
                 binding.zipperclose2Text.setVisibility(View.GONE);
                 binding.zipperclose3Text.setVisibility(View.VISIBLE);
                 binding.zipperclose4Text.setVisibility(View.GONE);
+                binding.zipperclose5Text.setVisibility(View.GONE);
                 binding.zipperclose2Image.setVisibility(View.GONE);
                 binding.zipperclose3Image.setVisibility(View.VISIBLE);
                 binding.zipperclose4Image.setVisibility(View.GONE);
@@ -84,6 +85,7 @@ public class ZippercloseActivity extends AppCompatActivity {
             case 3:
                 binding.zipperclose3Text.setVisibility(View.GONE);
                 binding.zipperclose4Text.setVisibility(View.VISIBLE);
+                binding.zipperclose5Text.setVisibility(View.VISIBLE);
                 binding.zipperclose3Image.setVisibility(View.GONE);
                 binding.zipperclose4Image.setVisibility(View.VISIBLE);
                 binding.zipperclosegonextButton.setVisibility(View.INVISIBLE);

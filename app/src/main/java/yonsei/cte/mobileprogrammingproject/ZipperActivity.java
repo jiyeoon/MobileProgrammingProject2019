@@ -6,7 +6,6 @@ import androidx.databinding.DataBindingUtil;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -78,6 +77,7 @@ public class ZipperActivity extends AppCompatActivity {
                 binding.zipper2Text.setVisibility(View.GONE);
                 binding.zipper3Text.setVisibility(View.VISIBLE);
                 binding.zipper4Text.setVisibility(View.GONE);
+                binding.zipper5Text.setVisibility(View.GONE);
                 binding.zipper2Image.setVisibility(View.GONE);
                 binding.zipper3Image.setVisibility(View.VISIBLE);
                 binding.zipper4Image.setVisibility(View.GONE);
@@ -86,6 +86,7 @@ public class ZipperActivity extends AppCompatActivity {
             case 3:
                 binding.zipper3Text.setVisibility(View.GONE);
                 binding.zipper4Text.setVisibility(View.VISIBLE);
+                binding.zipper5Text.setVisibility(View.VISIBLE);
                 binding.zipper3Image.setVisibility(View.GONE);
                 binding.zipper4Image.setVisibility(View.VISIBLE);
                 binding.zippergonextButton.setVisibility(View.INVISIBLE);

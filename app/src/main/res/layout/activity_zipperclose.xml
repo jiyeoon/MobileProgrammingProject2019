@@ -29,6 +29,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:visibility="visible"/>
         <ImageView
             android:id="@+id/zipperclose2_image"
@@ -36,6 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:visibility="gone"/>
         <ImageView
             android:id="@+id/zipperclose3_image"
@@ -43,6 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:visibility="gone"/>
         <ImageView
             android:id="@+id/zipperclose4_image"
@@ -50,6 +56,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:visibility="gone"/>
 
 
@@ -58,8 +66,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="1번 설명"
+            android:gravity="center"
+            android:text="① 지퍼 끝을 지퍼 고리에 끼워 맞추는 법을 유아에게 보여 줍니다"
             android:textSize="20sp"
+            android:ems="14"
             android:layout_marginBottom="10dp"
             android:visibility="visible"/>
         <TextView
@@ -67,8 +77,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="2번 설명"
+            android:gravity="center"
+            android:text="② 엄마가 지퍼 고리의 끝부분을 잡아주고 유아에게 지퍼 끝을 맞추어 지퍼를 올려 잠그기를 합니다"
             android:textSize="20sp"
+            android:ems="14"
             android:layout_marginBottom="10dp"
             android:visibility="gone"/>
         <TextView
@@ -76,8 +88,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="3번 설명"
+            android:gravity="center"
+            android:text="③ 이번에는 엄마가 잡아주지 않고 아이가 한손으로 지퍼 고리의 끝부분을 잡고 다른 한손으로 지퍼를 올려봅니다"
             android:textSize="20sp"
+            android:ems="14"
             android:layout_marginBottom="10dp"
             android:visibility="gone"/>
         <TextView
@@ -85,8 +99,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="4번 설명"
+            android:gravity="center"
+            android:text="④ 유아가 입고 있는 옷의 지퍼를 잠그게 합니다."
             android:textSize="20sp"
+            android:ems="14"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/zipperclose5_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/roundtext"
+            android:text="TIP. 아이가 실수하거나 더디게 하더라도 조금 여유있게 지켜봐 주고 잘 안 되는 부분에 대해서는 다시 한 번 엄마가 시범을 보여주면서 설명해 주는 것이 좋습니다"
+            android:textSize="20sp"
+            android:ems="14"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="10dp"
             android:visibility="gone"/>
 
@@ -103,7 +132,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/button_left"
                 android:visibility="invisible"
-                android:layout_marginRight="50dp"/>
+                android:layout_marginRight="100dp"/>
 
             <Button
                 android:id="@+id/zipperclosegohome_button"
@@ -117,7 +146,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/button_right"
                 android:visibility="visible"
-                android:layout_marginLeft="50dp"/>
+                android:layout_marginLeft="100dp"/>
         </LinearLayout>
 
     </LinearLayout>
