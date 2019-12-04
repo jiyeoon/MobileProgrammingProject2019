@@ -21,7 +21,7 @@ public class BtncloseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_btnclose);
-        binding.btngohomeButton.setOnClickListener(new View.OnClickListener() {
+        binding.btnclosegohomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BtncloseActivity.this, HomeActivity.class);
@@ -30,7 +30,7 @@ public class BtncloseActivity extends AppCompatActivity {
             }
         });
 
-        binding.btngonextButton.setOnClickListener(new View.OnClickListener() {
+        binding.btnclosegonextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (btn_condition <= num_contents)
@@ -38,7 +38,7 @@ public class BtncloseActivity extends AppCompatActivity {
                 setCondition(btn_condition);
             }
         });
-        binding.btngoprevButton.setOnClickListener(new View.OnClickListener() {
+        binding.btnclosegoprevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (btn_condition >= 0)
@@ -58,7 +58,7 @@ public class BtncloseActivity extends AppCompatActivity {
                 binding.btnclose2Text.setVisibility(View.GONE);
                 binding.btnclose1Image.setVisibility(View.VISIBLE);
                 binding.btnclose2Image.setVisibility(View.GONE);
-                binding.btngoprevButton.setVisibility(View.INVISIBLE);
+                binding.btnclosegoprevButton.setVisibility(View.INVISIBLE);
                 break;
             case 1:
                 binding.btnclose1Text.setVisibility(View.GONE);
@@ -67,15 +67,15 @@ public class BtncloseActivity extends AppCompatActivity {
                 binding.btnclose1Image.setVisibility(View.GONE);
                 binding.btnclose2Image.setVisibility(View.VISIBLE);
                 binding.btnclose3Image.setVisibility(View.GONE);
-                binding.btngoprevButton.setVisibility(View.VISIBLE);
-                binding.btngonextButton.setVisibility(View.VISIBLE);
+                binding.btnclosegoprevButton.setVisibility(View.VISIBLE);
+                binding.btnclosegonextButton.setVisibility(View.VISIBLE);
                 break;
             case 2:
                 binding.btnclose2Text.setVisibility(View.GONE);
                 binding.btnclose3Text.setVisibility(View.VISIBLE);
                 binding.btnclose2Image.setVisibility(View.GONE);
                 binding.btnclose3Image.setVisibility(View.VISIBLE);
-                binding.btngonextButton.setVisibility(View.INVISIBLE);
+                binding.btnclosegonextButton.setVisibility(View.INVISIBLE);
                 break;
 
         }
