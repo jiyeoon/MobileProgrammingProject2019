@@ -79,7 +79,7 @@
         <TextView
             android:id="@+id/zipperclose4_text"
             style="@style/CustomTextView"
-            android:text="④ 유아가 입고 있는 옷의 지퍼를 잠그게 합니다."
+            android:text="④ 유아가 입고 있는 옷의 지퍼를 잠그게 합니다"
             android:visibility="gone"/>
         <TextView
             android:id="@+id/zipperclose5_text"

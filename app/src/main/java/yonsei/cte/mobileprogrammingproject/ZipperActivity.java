@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,12 +18,14 @@ public class ZipperActivity extends AppCompatActivity {
     ActivityZipperBinding binding;
     int btn_condition = 0;
     int num_contents = 3;
+    MediaPlayer voice;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_zipper);
+        setCondition(btn_condition);
 
         binding.zippergohomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +66,7 @@ public class ZipperActivity extends AppCompatActivity {
                 binding.zipper1Image.setVisibility(View.VISIBLE);
                 binding.zipper2Image.setVisibility(View.GONE);
                 binding.zippergoprevButton.setVisibility(View.INVISIBLE);
+                voiceStart(btn_condition);
                 break;
             case 1:
                 binding.zipper1Text.setVisibility(View.GONE);
@@ -72,6 +76,7 @@ public class ZipperActivity extends AppCompatActivity {
                 binding.zipper2Image.setVisibility(View.VISIBLE);
                 binding.zipper3Image.setVisibility(View.GONE);
                 binding.zippergoprevButton.setVisibility(View.VISIBLE);
+                voiceStart(btn_condition);
                 break;
             case 2:
                 binding.zipper2Text.setVisibility(View.GONE);
@@ -82,6 +87,7 @@ public class ZipperActivity extends AppCompatActivity {
                 binding.zipper3Image.setVisibility(View.VISIBLE);
                 binding.zipper4Image.setVisibility(View.GONE);
                 binding.zippergonextButton.setVisibility(View.VISIBLE);
+                voiceStart(btn_condition);
                 break;
             case 3:
                 binding.zipper3Text.setVisibility(View.GONE);
@@ -90,8 +96,63 @@ public class ZipperActivity extends AppCompatActivity {
                 binding.zipper3Image.setVisibility(View.GONE);
                 binding.zipper4Image.setVisibility(View.VISIBLE);
                 binding.zippergonextButton.setVisibility(View.INVISIBLE);
+                voiceStart(btn_condition);
                 break;
 
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(voice != null){
+            voice.release();
+        }
+    }
+
+    private void voiceStart(int voiceNum){
+        switch (voiceNum) {
+            case 0:
+                if(voice != null){
+                    voice.release();
+                }
+                voice = MediaPlayer.create(getApplicationContext(), R.raw.voicezipper1);
+                voice.setLooping(false);
+                voice.start();
+                break;
+            case 1:
+                if(voice != null){
+                    voice.release();
+                }
+                voice = MediaPlayer.create(getApplicationContext(), R.raw.voicezipper2);
+                voice.setLooping(false);
+                voice.start();
+                break;
+            case 2:
+                if(voice != null){
+                    voice.release();
+                }
+                voice = MediaPlayer.create(getApplicationContext(), R.raw.voicezipper3);
+                voice.setLooping(false);
+                voice.start();
+                break;
+            case 3:
+                if(voice != null){
+                    voice.release();
+                }
+                voice = MediaPlayer.create(getApplicationContext(), R.raw.voicezipper4);
+                voice.setLooping(false);
+                voice.start();
+                voice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        voice = MediaPlayer.create(getApplicationContext(), R.raw.voicezippertip);
+                        voice.setLooping(false);
+                        voice.start();
+                    }
+                });
+                break;
+        }
+    }
+
 }

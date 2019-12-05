@@ -17,7 +17,7 @@
 
         <gradient
             android:angle="0"
-            android:endColor="#003876"
+            android:endColor="@color/introprogressbar"
             android:startColor="#ffffff"
             android:type="sweep"
             android:useLevel="false"/>

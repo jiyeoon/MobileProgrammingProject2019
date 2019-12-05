@@ -65,7 +65,7 @@ public class BtnActivity extends AppCompatActivity {
                 binding.btn1Image.setVisibility(View.VISIBLE);
                 binding.btn2Image.setVisibility(View.GONE);
                 binding.btngoprevButton.setVisibility(View.INVISIBLE);
-                //voiceStart(btn_condition);
+                voiceStart(btn_condition);
                 break;
             case 1:
                 binding.btn1Text.setVisibility(View.GONE);
@@ -76,7 +76,7 @@ public class BtnActivity extends AppCompatActivity {
                 binding.btn3Image.setVisibility(View.GONE);
                 binding.btngoprevButton.setVisibility(View.VISIBLE);
                 binding.btngonextButton.setVisibility(View.VISIBLE);
-                //voiceStart(btn_condition);
+                voiceStart(btn_condition);
                 break;
             case 2:
                 binding.btn2Text.setVisibility(View.GONE);
@@ -84,12 +84,12 @@ public class BtnActivity extends AppCompatActivity {
                 binding.btn2Image.setVisibility(View.GONE);
                 binding.btn3Image.setVisibility(View.VISIBLE);
                 binding.btngonextButton.setVisibility(View.INVISIBLE);
-                //voiceStart(btn_condition);
+                voiceStart(btn_condition);
                 break;
 
         }
     }
-    /*
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -101,22 +101,30 @@ public class BtnActivity extends AppCompatActivity {
     private void voiceStart(int voiceNum){
         switch (voiceNum) {
             case 0:
-                voice = MediaPlayer.create(getApplicationContext(), R.raw.voicetest);
+                if(voice != null){
+                    voice.release();
+                }
+                voice = MediaPlayer.create(getApplicationContext(), R.raw.voicebtn1);
                 voice.setLooping(false);
                 voice.start();
                 break;
             case 1:
-                voice = MediaPlayer.create(getApplicationContext(), R.raw.voicetest);
+                if(voice != null){
+                    voice.release();
+                }
+                voice = MediaPlayer.create(getApplicationContext(), R.raw.voicebtn2);
                 voice.setLooping(false);
                 voice.start();
                 break;
             case 2:
-                voice = MediaPlayer.create(getApplicationContext(), R.raw.voicetest);
+                if(voice != null){
+                    voice.release();
+                }
+                voice = MediaPlayer.create(getApplicationContext(), R.raw.voicebtn3);
                 voice.setLooping(false);
                 voice.start();
                 break;
         }
     }
 
-    */
 }

@@ -78,7 +78,7 @@
         <TextView
             android:id="@+id/zipper4_text"
             style="@style/CustomTextView"
-            android:text="④ 유아가 입고 있는 옷의 지퍼를 열어보게 합니다."
+            android:text="④ 유아가 입고 있는 옷의 지퍼를 열어보게 합니다"
             android:visibility="gone"/>
         <TextView
             android:id="@+id/zipper5_text"

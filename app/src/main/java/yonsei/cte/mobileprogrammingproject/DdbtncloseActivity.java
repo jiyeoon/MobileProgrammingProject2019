@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,11 +18,13 @@ public class DdbtncloseActivity extends AppCompatActivity {
 
     ActivityDdbtncloseBinding binding;
     int btn_condition = 0;
+    MediaPlayer voice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_ddbtnclose);
+        setCondition(btn_condition);
 
         binding.ddbtnclosegohomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,4 +85,42 @@ public class DdbtncloseActivity extends AppCompatActivity {
 
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(voice != null){
+            voice.release();
+        }
+    }
+
+    private void voiceStart(int voiceNum){
+        switch (voiceNum) {
+            case 0:
+                if(voice != null){
+                    voice.release();
+                }
+                voice = MediaPlayer.create(getApplicationContext(), R.raw.voiceddbtnclose1);
+                voice.setLooping(false);
+                voice.start();
+                break;
+            case 1:
+                if(voice != null){
+                    voice.release();
+                }
+                voice = MediaPlayer.create(getApplicationContext(), R.raw.voiceddbtnclose2);
+                voice.setLooping(false);
+                voice.start();
+                break;
+            case 2:
+                if(voice != null){
+                    voice.release();
+                }
+                voice = MediaPlayer.create(getApplicationContext(), R.raw.voiceddbtnclose3);
+                voice.setLooping(false);
+                voice.start();
+                break;
+        }
+    }
+
 }
