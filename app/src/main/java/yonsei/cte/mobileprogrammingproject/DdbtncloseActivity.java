@@ -64,6 +64,7 @@ public class DdbtncloseActivity extends AppCompatActivity {
                 binding.ddbtnclose1Image.setVisibility(View.VISIBLE);
                 binding.ddbtnclose2Image.setVisibility(View.GONE);
                 binding.ddbtnclosegoprevButton.setVisibility(View.INVISIBLE);
+                voiceStart(btn_condition);
                 break;
             case 1:
                 binding.ddbtnclose1Text.setVisibility(View.GONE);
@@ -74,6 +75,7 @@ public class DdbtncloseActivity extends AppCompatActivity {
                 binding.ddbtnclose3Image.setVisibility(View.GONE);
                 binding.ddbtnclosegoprevButton.setVisibility(View.VISIBLE);
                 binding.ddbtnclosegonextButton.setVisibility(View.VISIBLE);
+                voiceStart(btn_condition);
                 break;
             case 2:
                 binding.ddbtnclose2Text.setVisibility(View.GONE);
@@ -81,6 +83,7 @@ public class DdbtncloseActivity extends AppCompatActivity {
                 binding.ddbtnclose2Image.setVisibility(View.GONE);
                 binding.ddbtnclose3Image.setVisibility(View.VISIBLE);
                 binding.ddbtnclosegonextButton.setVisibility(View.INVISIBLE);
+                voiceStart(btn_condition);
                 break;
 
         }
