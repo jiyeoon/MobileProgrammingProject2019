@@ -44,25 +44,13 @@
 
         <TextView
             android:id="@+id/stud1_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
+            style="@style/CustomTextView"
             android:text="① 엄지와 검지로 고리와 단추를 잡는다"
-            android:textSize="20sp"
-            android:ems="14"
-            android:layout_marginBottom="10dp"
             android:visibility="visible"/>
         <TextView
             android:id="@+id/stud2_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
+            style="@style/CustomTextView"
             android:text="② 고리를 잡은 손 반대쪽 엄지로 단추를 밀어 빼낸다"
-            android:textSize="20sp"
-            android:ems="14"
-            android:layout_marginBottom="10dp"
             android:visibility="gone"/>
 
         <LinearLayout

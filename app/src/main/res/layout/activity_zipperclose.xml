@@ -60,49 +60,26 @@
             android:visibility="gone"/>
 
 
+
         <TextView
             android:id="@+id/zipperclose1_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
+            style="@style/CustomTextView"
             android:text="① 지퍼 끝을 지퍼 고리에 끼워 맞추는 법을 유아에게 보여 줍니다"
-            android:textSize="20sp"
-            android:ems="14"
-            android:layout_marginBottom="10dp"
             android:visibility="visible"/>
         <TextView
             android:id="@+id/zipperclose2_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
+            style="@style/CustomTextView"
             android:text="② 엄마가 지퍼 고리의 끝부분을 잡아주고 유아에게 지퍼 끝을 맞추어 지퍼를 올려 잠그기를 합니다"
-            android:textSize="20sp"
-            android:ems="14"
-            android:layout_marginBottom="10dp"
             android:visibility="gone"/>
         <TextView
             android:id="@+id/zipperclose3_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
+            style="@style/CustomTextView"
             android:text="③ 이번에는 엄마가 잡아주지 않고 아이가 한손으로 지퍼 고리의 끝부분을 잡고 다른 한손으로 지퍼를 올려봅니다"
-            android:textSize="20sp"
-            android:ems="14"
-            android:layout_marginBottom="10dp"
             android:visibility="gone"/>
         <TextView
             android:id="@+id/zipperclose4_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
+            style="@style/CustomTextView"
             android:text="④ 유아가 입고 있는 옷의 지퍼를 잠그게 합니다."
-            android:textSize="20sp"
-            android:ems="14"
-            android:layout_marginBottom="10dp"
             android:visibility="gone"/>
         <TextView
             android:id="@+id/zipperclose5_text"
@@ -112,8 +89,8 @@
             android:gravity="center"
             android:background="@drawable/roundtext"
             android:text="TIP. 아이가 실수하거나 더디게 하더라도 조금 여유있게 지켜봐 주고 잘 안 되는 부분에 대해서는 다시 한 번 엄마가 시범을 보여주면서 설명해 주는 것이 좋습니다"
-            android:textSize="20sp"
-            android:ems="14"
+            android:textSize="18sp"
+            android:ems="17"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="10dp"
             android:visibility="gone"/>
