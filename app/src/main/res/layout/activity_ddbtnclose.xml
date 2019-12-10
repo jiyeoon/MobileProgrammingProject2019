@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="똑딱이 풀기"
+            android:text="똑딱이단추 잠그기"
             android:textSize="30sp"
             android:gravity="center"
             android:background="@color/colorPrimaryDark"
@@ -29,6 +29,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:visibility="visible"/>
         <ImageView
             android:id="@+id/ddbtnclose2_image"
@@ -36,6 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:visibility="gone"/>
         <ImageView
             android:id="@+id/ddbtnclose3_image"
@@ -43,60 +47,53 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:visibility="gone"/>
 
         <TextView
             android:id="@+id/ddbtnclose1_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="1번 설명"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
+            style="@style/CustomTextView"
+            android:text="① 왼쪽 엄지와 검지로 볼록한 똑딱이 단추를 잡는다."
             android:visibility="visible"/>
         <TextView
             android:id="@+id/ddbtnclose2_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="2번 설명"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
+            style="@style/CustomTextView"
+            android:text="② 오른쪽 엄지와 검지로 홈이 패인 똑딱이 단추를 잡는다."
             android:visibility="gone"/>
         <TextView
             android:id="@+id/ddbtnclose3_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="3번 설명"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
+            style="@style/CustomTextView"
+            android:text="③ 왼쪽에 있는 볼록한 똑딱이 단추를 오른쪽에 있는 홈이 패인 단추에 끼운다."
             android:visibility="gone"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginBottom="10dp">
 
             <Button
                 android:id="@+id/ddbtnclosegoprev_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="이전"
-                android:visibility="invisible"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button_left"
+                android:visibility="invisible"
+                android:layout_marginRight="100dp"/>
 
             <Button
                 android:id="@+id/ddbtnclosegohome_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="홈으로" />
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button_home" />
 
             <Button
                 android:id="@+id/ddbtnclosegonext_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="다음"
-                android:visibility="visible"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button_right"
+                android:visibility="visible"
+                android:layout_marginLeft="100dp"/>
         </LinearLayout>
 
     </LinearLayout>

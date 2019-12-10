@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 
@@ -16,11 +17,13 @@ public class VelcrocloseActivity extends AppCompatActivity {
     ActivityVelcrocloseBinding binding;
     int btn_condition = 0;
     int num_contents = 2;
+    MediaPlayer voice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_velcroclose);
+        setCondition(btn_condition);
 
         binding.velcroclosegohomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +63,7 @@ public class VelcrocloseActivity extends AppCompatActivity {
                 binding.velcroclose1Image.setVisibility(View.VISIBLE);
                 binding.velcroclose2Image.setVisibility(View.GONE);
                 binding.velcroclosegoprevButton.setVisibility(View.INVISIBLE);
+                voiceStart(btn_condition);
                 break;
             case 1:
                 binding.velcroclose1Text.setVisibility(View.GONE);
@@ -70,6 +74,7 @@ public class VelcrocloseActivity extends AppCompatActivity {
                 binding.velcroclose3Image.setVisibility(View.GONE);
                 binding.velcroclosegoprevButton.setVisibility(View.VISIBLE);
                 binding.velcroclosegonextButton.setVisibility(View.VISIBLE);
+                voiceStart(btn_condition);
                 break;
             case 2:
                 binding.velcroclose2Text.setVisibility(View.GONE);
@@ -77,8 +82,47 @@ public class VelcrocloseActivity extends AppCompatActivity {
                 binding.velcroclose2Image.setVisibility(View.GONE);
                 binding.velcroclose3Image.setVisibility(View.VISIBLE);
                 binding.velcroclosegonextButton.setVisibility(View.INVISIBLE);
+                voiceStart(btn_condition);
                 break;
 
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(voice != null){
+            voice.release();
+        }
+    }
+
+    private void voiceStart(int voiceNum){
+        switch (voiceNum) {
+            case 0:
+                if(voice != null){
+                    voice.release();
+                }
+                voice = MediaPlayer.create(getApplicationContext(), R.raw.voicevelcroclose1);
+                voice.setLooping(false);
+                voice.start();
+                break;
+            case 1:
+                if(voice != null){
+                    voice.release();
+                }
+                voice = MediaPlayer.create(getApplicationContext(), R.raw.voicevelcroclose2);
+                voice.setLooping(false);
+                voice.start();
+                break;
+            case 2:
+                if(voice != null){
+                    voice.release();
+                }
+                voice = MediaPlayer.create(getApplicationContext(), R.raw.voicevelcroclose3);
+                voice.setLooping(false);
+                voice.start();
+                break;
+        }
+    }
+
 }

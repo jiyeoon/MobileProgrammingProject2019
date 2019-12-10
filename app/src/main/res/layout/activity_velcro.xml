@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".VelcroActivity"
-        android:padding="10dp">
+        tools:context=".VelcroActivity">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -29,6 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:visibility="visible"/>
         <ImageView
             android:id="@+id/velcro2_image"
@@ -36,6 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:visibility="gone"/>
         <ImageView
             android:id="@+id/velcro3_image"
@@ -43,62 +46,55 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:visibility="gone"/>
 
 
         <TextView
             android:id="@+id/velcro1_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="1번 설명"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
+            style="@style/CustomTextView"
+            android:text="① 엄지와 검지로 한쪽에 있는 까실이 벨크로 주위의 헝겊을 잡는다"
             android:visibility="visible"/>
         <TextView
             android:id="@+id/velcro2_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="2번 설명"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
+            style="@style/CustomTextView"
+            android:text="② 다른쪽 엄지와 검지로 보슬이 벨크로 주위의 헝겊을 잡는다"
             android:visibility="gone"/>
         <TextView
             android:id="@+id/velcro3_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="3번 설명"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
+            style="@style/CustomTextView"
+            android:text="③ 양쪽 헝겊을 잡고, 서로 반대편으로 당겨 벨크로를 푼다"
             android:visibility="gone"/>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginBottom="10dp">
 
             <Button
                 android:id="@+id/velcrogoprev_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="이전"
-                android:visibility="invisible"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button_left"
+                android:visibility="invisible"
+                android:layout_marginRight="100dp"/>
 
             <Button
                 android:id="@+id/velcrogohome_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="홈으로" />
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button_home" />
 
             <Button
                 android:id="@+id/velcrogonext_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="다음"
-                android:visibility="visible"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button_right"
+                android:visibility="visible"
+                android:layout_marginLeft="100dp"/>
         </LinearLayout>
 
     </LinearLayout>
