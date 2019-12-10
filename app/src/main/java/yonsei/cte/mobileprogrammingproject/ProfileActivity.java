@@ -4,16 +4,21 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,6 +28,7 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -31,11 +37,16 @@ public class ProfileActivity extends Activity implements AdapterView.OnItemClick
     protected FirebaseAuth mAuth;
     private FirebaseUser currentUser;
     private String name, email, photoUrl, uid, emailVerified;
+    private static final String TAG_TITLE = "title";
+    private static final String TAG_DATE = "date";
 
     ArrayList<String> mItems;
+    ArrayList<HashMap<String, String>> TitleList;
     ArrayAdapter<String> adapter;
+    ListAdapter adapter2;
     TextView textYear;
     TextView textMonth;
+    ListView list;
 
     Cursor month_list_cursor;
     DBHelper mDBHelper;
@@ -82,9 +93,10 @@ public class ProfileActivity extends Activity implements AdapterView.OnItemClick
                 new int[] {android.R.id.text1, android.R.id.text2});
 
 
-        ListView list = (ListView) findViewById(R.id.month_schedule_list);
-        list.setAdapter(month_list_adapter);
+        list = (ListView) findViewById(R.id.month_schedule_list);
+        TitleList = new ArrayList<HashMap<String,String>>();
 
+        showList();
     }
 
     private void fillDate(int year, int month) {
@@ -116,41 +128,6 @@ public class ProfileActivity extends Activity implements AdapterView.OnItemClick
     }
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            name = currentUser.getDisplayName();
-            email = currentUser.getEmail();
-//            photoUrl = currentUser.getPhotoUrl().toString();
-            uid = currentUser.getUid();
-
-            //Select Image Views to display image
-            CircleImageView image = (CircleImageView) findViewById(R.id.profile_image);
-            if(photoUrl != null){
-                //Display jpg image from the project resource
- //               Picasso.get().load(photoUrl).into(image);
-            }else{
-                //유저 없으면 그냥 기본 이미지로 출력하긔
-   //             Picasso.get().load(R.drawable.profile);
-            }
-
-            TextView nameView = (TextView) findViewById(R.id.profile_name);
-            nameView.setText(name);
-
-            TextView emailView = (TextView) findViewById(R.id.profile_email);
-            emailView.setText(email);
-
-        } else{
-            //유저 없으면..
-
-        }
-
-    }
-
-
     public void onCalClicked(View view) {
         int year = Integer.parseInt(textYear.getText().toString());
         int month = Integer.parseInt(textMonth.getText().toString());
@@ -168,6 +145,61 @@ public class ProfileActivity extends Activity implements AdapterView.OnItemClick
             intent.putExtra("month", textMonth.getText().toString());
             intent.putExtra("day", mItems.get(arg1));
             startActivity(intent);
+            finish();
+        }
+
+    }
+
+    public void showList(){
+
+        try {
+
+            mDBHelper = new DBHelper(this, "Today.db", null, 1);
+            SQLiteDatabase db = mDBHelper.getWritableDatabase();
+
+
+            //SELECT문을 사용하여 테이블에 있는 데이터를 가져옵니다..
+            Cursor c = db.rawQuery("SELECT * FROM today" , null);
+
+            if (c != null) {
+
+
+                if (c.moveToFirst()) {
+                    do {
+                        String Title = c.getString(c.getColumnIndex("title"));
+                        String Date = c.getString(c.getColumnIndex("date"));
+
+                        //HashMap에 넣습니다.
+                        HashMap<String,String> Titles = new HashMap<String,String>();
+
+                        Titles.put(TAG_TITLE, Title);
+                        Titles.put(TAG_DATE, Date);
+
+                        //ArrayList에 추가합니다..
+                        TitleList.add(Titles);
+
+                    } while (c.moveToNext());
+                }
+            }
+
+            db.close();
+
+
+            //새로운 apapter를 생성하여 데이터를 넣은 후..
+            adapter2 = new SimpleAdapter(
+                    this, TitleList, R.layout.list_item,
+                    new String[]{TAG_TITLE, TAG_DATE},
+                    new int[]{ R.id.TV_title, R.id.TV_date}
+            );
+
+
+            //화면에 보여주기 위해 Listview에 연결합니다.
+            list.setAdapter(adapter2);
+
+
+        } catch (SQLiteException se) {
+            Toast.makeText(getApplicationContext(),  se.getMessage(), Toast.LENGTH_LONG).show();
+            Log.e("",  se.getMessage());
         }
 
     }

@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="일정 관리"/>
+            android:text="메모 관리"/>
     </LinearLayout>
 
     <LinearLayout
@@ -41,7 +41,7 @@
             android:id="@+id/cal_add_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="일정 추가"
+            android:text="메모 추가"
             android:onClick="onCalAddButtonClicked"/>
 
     </LinearLayout>

@@ -44,7 +44,7 @@ public class CreateAccount extends AppCompatActivity {
 
         //Check if user is signed in
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+        //updateUI(currentUser);
     }
 
 
@@ -65,7 +65,10 @@ public class CreateAccount extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Authentication is failed.", Toast.LENGTH_SHORT).show();
                         } else{
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            Intent intent = new Intent(CreateAccount.this, Login.class);
+                            startActivity(intent);
+                            finish();
+                            //updateUI(user);
                         }
                     }
                 });
@@ -105,7 +108,7 @@ public class CreateAccount extends AppCompatActivity {
 
         createAccount(email, password);
     }
-
+/*
     private void updateUI(FirebaseUser user){
         if(user != null){
             mStatusTextView.setText(getString(R.string.emailpassword_status_fmt, user.getEmail(), user.isEmailVerified()));
@@ -124,5 +127,5 @@ public class CreateAccount extends AppCompatActivity {
             findViewById(R.id.email_sign_in_button).setVisibility(View.GONE);
         }
     }
-
+*/
 }

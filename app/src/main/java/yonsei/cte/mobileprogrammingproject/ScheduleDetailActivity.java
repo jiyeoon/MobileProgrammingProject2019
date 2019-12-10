@@ -27,8 +27,8 @@ public class ScheduleDetailActivity extends Activity implements
         editMemo = (EditText) findViewById(R.id.edit_memo);
 
         Intent intent = getIntent();
-        mID = intent.getIntExtra("ParamID", - 1);
-        today = intent.getStringExtra("ParamDate");
+        mID = intent.getIntExtra("ParamDate", - 1);
+        today = intent.getStringExtra("ParamID");
 
         mDBHelper = new DBHelper(this, "Today.db", null, 1);
 
@@ -36,7 +36,7 @@ public class ScheduleDetailActivity extends Activity implements
             editDate.setText(today);
         }else{
             SQLiteDatabase db = mDBHelper.getWritableDatabase();
-            Cursor cursor = db.rawQuery("SELECT * FROM today WHERE _id = " + mID + "'", null);
+            Cursor cursor = db.rawQuery("SELECT * FROM today WHERE _id = '" + mID + "'", null);
 
             if(cursor.moveToNext()){
                 editTitle.setText(cursor.getString(1));
@@ -71,7 +71,7 @@ public class ScheduleDetailActivity extends Activity implements
                     + editTitle.getText().toString() + "', date = '"
                     + editDate.getText().toString() + "', tile = '"
                     + editTime.getText().toString() + "', memo = '"
-                    + editMemo.getText().toString() + "' WHERE _id = "
+                    + editMemo.getText().toString() + "' WHERE _id = '"
                     + mID + "';");
                 }
                 else{

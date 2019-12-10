@@ -106,14 +106,14 @@ public class VelcrocloseActivity extends AppCompatActivity {
                 voice.setLooping(false);
                 voice.start();
                 break;
-            case 1:
+            /*case 1:
                 if(voice != null){
                     voice.release();
                 }
                 voice = MediaPlayer.create(getApplicationContext(), R.raw.voicevelcroclose2);
                 voice.setLooping(false);
                 voice.start();
-                break;
+                break;*/
             case 2:
                 if(voice != null){
                     voice.release();

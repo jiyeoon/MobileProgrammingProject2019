@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -80,11 +81,22 @@ public class TodayActivity extends Activity implements AdapterView.OnItemClickLi
             case 1: //애드 했으면.. 1을 추가함
                 if(resultCode == RESULT_OK){
                     SQLiteDatabase db = mDBHelper.getWritableDatabase();
-                    cursor = db.rawQuery("SELECT * FROM tody WHERE date = '" + today + "'", null);
+                    cursor = db.rawQuery("SELECT * FROM today WHERE date = '" + today + "'", null);
                     adapter.changeCursor(cursor);
                     mDBHelper.close();
                 }
                 break;
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            Intent intent = new Intent(TodayActivity.this, ProfileActivity.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

@@ -97,7 +97,7 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
 
                             //로그인 성공하면 다시 화면 돌아감~~!!
-                            Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                             intent.putExtra("user" ,user);
 
                             startActivity(intent);
@@ -112,7 +112,7 @@ public class Login extends AppCompatActivity {
 
                         //start exclude
                         if(!task.isSuccessful()){
-                            mStatusTextView.setText(R.string.auth_failed);
+                            //mStatusTextView.setText(R.string.auth_failed);
                         }
                     }
                 });
