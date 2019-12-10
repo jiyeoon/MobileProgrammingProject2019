@@ -13,12 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="옷 잠그기"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:background="@drawable/roundbutton"
+        android:backgroundTint="@color/introprogressbar"
+        android:layout_marginBottom="10dp"
         android:layout_weight="1"/>
     <Button
         android:id="@+id/clothopen_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="옷 풀기"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:background="@drawable/roundbutton"
+        android:backgroundTint="@color/introBackground"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"/>
 
 </LinearLayout>

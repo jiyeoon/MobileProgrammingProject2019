@@ -5,4 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="introBackground">#F8CBAC</color>
     <color name="introprogressbar">#EF8D4C</color>
+    <color name="buttonColor">#EE965B</color>
+    <color name="buttonColor2">#ECA474</color>
+    <color name="buttonColor3">#ECB087</color>
 </resources>
