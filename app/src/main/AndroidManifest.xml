@@ -37,6 +37,8 @@
         </activity>
         <activity android:name=".CreateAccount"></activity>
         <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".TodayActivity"></activity>
+        <activity android:name=".ScheduleDetailActivity"></activity>
     </application>
 
 </manifest>

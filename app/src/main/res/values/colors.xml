@@ -8,4 +8,5 @@
     <color name="buttonColor">#EE965B</color>
     <color name="buttonColor2">#ECA474</color>
     <color name="buttonColor3">#ECB087</color>
+    <color name="appBarColor">#FFFFFF</color>
 </resources>

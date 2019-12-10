@@ -10,7 +10,7 @@
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_gravity="center"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="40dp"
         app:civ_border_color="#FF000000"
         android:src="@drawable/profile"
         app:civ_border_width="2dp" />
@@ -38,6 +38,73 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
         android:text="Upcoming Events"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edit_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="년도 입력"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="년"/>
+
+        <EditText
+            android:id="@+id/edit_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="월 입력"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="월"/>
+
+
+        <Button
+            android:id="@+id/cal_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="클릭"
+            android:onClick="onCalClicked"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <GridView
+            android:id="@+id/cal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:numColumns="7">
+        </GridView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/month_schedule_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
+
+    </LinearLayout>
 
 
 
