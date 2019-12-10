@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#DADCE0</color>
-    <color name="colorAccent">#E0E0E0</color>
-    <color name="appBarColor">#292424</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#4DD0E1</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="introBackground">#F8CBAC</color>
+    <color name="introprogressbar">#EF8D4C</color>
+    <color name="buttonColor">#EE965B</color>
+    <color name="buttonColor2">#ECA474</color>
+    <color name="buttonColor3">#ECB087</color>
 </resources>
