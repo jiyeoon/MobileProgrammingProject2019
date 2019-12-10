@@ -40,23 +40,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
-        //start Initialize_auth
-        //Initialize firebase auth
-        //mAuth = FirebaseAuth.getInstance();
 
         Button btn_go_home = (Button) findViewById(R.id.btn_Gohome);
         btn_go_home.setOnClickListener(new View.OnClickListener() {
@@ -106,24 +89,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-/*
-    private void updateUI(FirebaseUser user){
-        if(user != null){
-            mStatusTextView.setText(getString(R.string.emailpassword_status_fmt, user.getEmail(), user.isEmailVerified()));
-            mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
-
-            findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
-            findViewById(R.id.email_password_fields).setVisibility(View.GONE);
-            findViewById(R.id.email_sign_in_button).setVisibility(View.VISIBLE);
-        }
-        else{
-            mStatusTextView.setText(R.string.sign_out);
-            mDetailTextView.setText(null);
-
-            findViewById(R.id.email_password_buttons).setVisibility(View.VISIBLE);
-            findViewById(R.id.email_password_fields).setVisibility(View.VISIBLE);
-            findViewById(R.id.email_sign_in_button).setVisibility(View.GONE);
-        }
-    }
-*/
 }

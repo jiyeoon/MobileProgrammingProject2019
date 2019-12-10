@@ -31,7 +31,10 @@ public class ProfileActivity extends Activity {
         Intent intent = getIntent();
         FirebaseUser user = (FirebaseUser) intent.getSerializableExtra("user");
         currentUser = user;
+
     }
+
+
 
 
     @Override
@@ -67,6 +70,7 @@ public class ProfileActivity extends Activity {
         }
 
     }
+
 
 
 

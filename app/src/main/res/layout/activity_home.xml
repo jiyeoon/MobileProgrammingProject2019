@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
+        style="@style/ButtonList"
         android:id="@+id/btn_start_vcr"
         android:layout_weight="1"
         android:layout_width="match_parent"
@@ -10,6 +11,7 @@
         android:text="벨크로"
         android:layout_margin="7dp"/>
     <Button
+        style="@style/ButtonList"
         android:id="@+id/btn_start_ddbtn"
         android:layout_weight="1"
         android:layout_width="match_parent"
@@ -17,6 +19,7 @@
         android:text="똑딱이"
         android:layout_margin="7dp"/>
     <Button
+        style="@style/ButtonList"
         android:id="@+id/btn_start_zipper"
         android:layout_weight="1"
         android:layout_width="match_parent"
@@ -24,6 +27,7 @@
         android:text="지퍼"
         android:layout_margin="7dp"/>
     <Button
+
         android:id="@+id/btn_start_stud"
         android:layout_weight="1"
         android:layout_width="match_parent"
